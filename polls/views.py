@@ -1,7 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, Http404
 
-
 from .models import Question
 
 
@@ -21,8 +20,8 @@ def index(request):
     # return HttpResponse(template.render(context,request))
 
 def detail(request, question_id):
-        question = get_object_or_404(Question, pk=question_id)
-        return render(request,"polls/detail.html", {"question": question}) 
+    question = get_object_or_404(Question,pk=question_id)
+    return render(request,"polls/detail.html", {"question": question}) 
 
 #detail view with long way of doing 404:
 # def detail(request, question_id):
